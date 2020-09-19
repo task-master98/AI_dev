@@ -10,7 +10,7 @@ class Neural_Net:
         self.iterations = iterations
         self.X = inputs
         self.y = output
-        self.loss = [1, 2, 3]
+        self.loss = []
 
     def weight_init(self):
         self.w1 = np.random.randn(self.layers[0], self.layers[1])
@@ -90,29 +90,29 @@ class Neural_Net:
 
 
 
-# headers =  ['age', 'sex','chest_pain','resting_blood_pressure',
-#         'serum_cholestoral', 'fasting_blood_sugar', 'resting_ecg_results',
-#         'max_heart_rate_achieved', 'exercise_induced_angina', 'oldpeak','slope of the peak',
-#         'num_of_major_vessels','thal', 'heart_disease']
-#
-# address = r'C:\Users\ishaa\Downloads\heart.dat'
-#
-# heart_df = pd.read_csv(address, sep=' ', names=headers)
-#
-# # heart_df = pd.read_csv('heart_disease.csv')
-# X = heart_df.drop(columns=['heart_disease'])
-# heart_df['heart_disease'] = heart_df['heart_disease'].replace(1, 0)
-# heart_df['heart_disease'] = heart_df['heart_disease'].replace(2, 1)
-#
-# y_label = heart_df['heart_disease'].values.reshape(X.shape[0], 1)
-#
-# X_train, X_test, y_train, y_test = train_test_split(X, y_label, test_size=0.2, random_state=1)
-# sc = StandardScaler()
-# sc.fit(X_train)
-# sc.transform(X_train)
-# sc.transform(X_test)
-#
-# n_trial = Neural_Net(X_train, y_train, [13, 8, 1])
-#
-# n_trial.fit(X_train, y_train)
+headers =  ['age', 'sex','chest_pain','resting_blood_pressure',
+        'serum_cholestoral', 'fasting_blood_sugar', 'resting_ecg_results',
+        'max_heart_rate_achieved', 'exercise_induced_angina', 'oldpeak','slope of the peak',
+        'num_of_major_vessels','thal', 'heart_disease']
+
+address = r'C:\Users\ishaa\Downloads\heart.dat'
+
+heart_df = pd.read_csv(address, sep=' ', names=headers)
+
+heart_df = pd.read_csv('heart_disease.csv')
+X = heart_df.drop(columns=['heart_disease'])
+heart_df['heart_disease'] = heart_df['heart_disease'].replace(1, 0)
+heart_df['heart_disease'] = heart_df['heart_disease'].replace(2, 1)
+
+y_label = heart_df['heart_disease'].values.reshape(X.shape[0], 1)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y_label, test_size=0.2, random_state=1)
+sc = StandardScaler()
+sc.fit(X_train)
+sc.transform(X_train)
+sc.transform(X_test)
+
+n_trial = Neural_Net(X_train, y_train, [13, 8, 1])
+
+n_trial.fit(X_train, y_train)
 
