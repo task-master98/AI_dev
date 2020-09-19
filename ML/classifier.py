@@ -10,7 +10,7 @@ class Neural_Net:
         self.iterations = iterations
         self.X = inputs
         self.y = output
-        self.loss = []
+        self.loss = [1, 2, 3]
 
     def weight_init(self):
         self.w1 = np.random.randn(self.layers[0], self.layers[1])
