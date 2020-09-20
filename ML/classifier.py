@@ -99,7 +99,7 @@ address = r'C:\Users\ishaa\Downloads\heart.dat'
 
 heart_df = pd.read_csv(address, sep=' ', names=headers)
 
-heart_df = pd.read_csv('heart_disease.csv')
+# heart_df = pd.read_csv('heart_disease.csv')
 X = heart_df.drop(columns=['heart_disease'])
 heart_df['heart_disease'] = heart_df['heart_disease'].replace(1, 0)
 heart_df['heart_disease'] = heart_df['heart_disease'].replace(2, 1)
