@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 class Neural_Net:
-    def __init__(self, inputs, output, layers=[5, 4, 3], learning_rate=0.001, iterations=100):
+    def __init__(self, inputs, output, layers=[13, 8, 1], learning_rate=0.001, iterations=100):
         self.learning_rate = learning_rate
         self.layers = layers
         self.iterations = iterations
@@ -99,7 +99,7 @@ address = r'C:\Users\ishaa\Downloads\heart.dat'
 
 heart_df = pd.read_csv(address, sep=' ', names=headers)
 
-# heart_df = pd.read_csv('heart_disease.csv')
+
 X = heart_df.drop(columns=['heart_disease'])
 heart_df['heart_disease'] = heart_df['heart_disease'].replace(1, 0)
 heart_df['heart_disease'] = heart_df['heart_disease'].replace(2, 1)
